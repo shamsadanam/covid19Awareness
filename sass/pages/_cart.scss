@@ -1,0 +1,98 @@
+.cart-head {
+  @include flexCenter();
+  margin: 3rem 0;
+}
+
+.cart-body {
+  & .case {
+    @include respondMax(767px) {
+      with: 100%;
+    }
+  }
+  & thead tr th {
+    border-bottom: 3px solid $color-primary;
+  }
+  & tbody tr th,
+  & tbody tr td {
+    border-top: 1px solid rgba($color-primary, 0.4);
+  }
+  & thead {
+    @include respondMax(575px) {
+      display: none;
+    }
+  }
+  & .cart-item {
+    @include respondMax(575px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & td {
+        width: 100%;
+      }
+    }
+  }
+  & th {
+    text-align: center;
+  }
+  & th,
+  & td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 1rem 0;
+  }
+
+  & .cart-action {
+    // @include flexCenter();
+    @include respondMax(575px) {
+      align-self: flex-end;
+    }
+
+    & i {
+      font-size: 3rem;
+      color: $color-muted;
+      transition: all 0.2s;
+      &:hover {
+        color: $color-red;
+        cursor: pointer;
+      }
+    }
+  }
+
+  & form {
+    & .form-control {
+      font-size: 2rem;
+      &:focus {
+        border: 1px solid $color-primary;
+      }
+      &::placeholder {
+        font-size: inherit;
+      }
+    }
+  }
+  .cart-quantity {
+    width: 40%;
+    @include respondMax(767px) {
+      width: 100%;
+    }
+    @include respondMax(575px) {
+      width: 40%;
+    }
+    & [type~="number"] {
+      padding: 1rem;
+    }
+  }
+}
+
+.cart-checkout {
+  margin-top: 5rem;
+  padding: 3rem 0;
+  & .card-header {
+    background-color: $color-primary-light !important;
+  }
+  & .card-body {
+    & .y2 {
+      padding: 1rem 0;
+      border-bottom: 1px solid $color-primary-light;
+    }
+  }
+}

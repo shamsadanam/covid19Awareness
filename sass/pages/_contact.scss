@@ -1,0 +1,15 @@
+.contact-section {
+  margin: 1rem 0;
+  padding: 1rem 0 3rem 0;
+}
+
+.contact {
+  &__map {
+    // ::: need api key to customize map :::
+    width: 100%;
+    height: 30rem;
+  }
+  &__title {
+    font-size: 2.5rem;
+  }
+}

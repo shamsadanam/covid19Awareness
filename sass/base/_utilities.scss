@@ -1,0 +1,111 @@
+.my-radius {
+  border-radius: 1rem;
+}
+
+.my-radius-b {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.outline-none {
+  outline: none;
+}
+
+.img-cover {
+  @include imgCover();
+}
+
+.bg-grey {
+  background-color: $color-grey;
+}
+
+.bg-white-tp {
+  background-color: rgba($color-white, 0.95);
+}
+
+.my-link {
+  font-size: 1.4rem;
+  color: $color-primary;
+  &:hover {
+    color: $color-primary;
+    text-decoration: underline;
+  }
+}
+
+.my-link-black {
+  font-size: 1.4rem;
+  color: inherit;
+  &:hover {
+    color: $color-primary;
+    text-decoration: underline;
+  }
+}
+
+.name-link-black {
+  font-size: 1.8rem;
+  color: red;
+  &:hover {
+    color: $color-primary;
+    text-decoration: underline;
+  }
+}
+
+.read {
+  max-width: 65ch;
+}
+
+.read-post {
+  max-width: 60ch;
+}
+
+.read-sm {
+  max-width: 35ch;
+}
+
+.t-xlg {
+  font-size: 2.5rem;
+}
+
+.t-lg {
+  font-size: 1.8rem;
+}
+.t-md {
+  font-size: 2rem;
+}
+.t-small {
+  font-size: 1.4rem !important;
+}
+.t-mini {
+  font-size: 1.2rem !important;
+}
+.t-tiny {
+  font-size: 1rem !important;
+  font-weight: 600;
+}
+
+.t-bold {
+  font-weight: 600;
+}
+
+.t-bolder {
+  font-weight: 700;
+}
+
+.t-italic {
+  font-style: italic;
+}
+
+.lh-16 {
+  line-height: 16px;
+}
+
+.u-w-15 {
+  width: 15%;
+}
+
+.radius-left-50 {
+  border-radius: 50rem 0 0 50rem !important;
+}
+
+.radius-right-50 {
+  border-radius: 0 50rem 50rem 0 !important;
+}

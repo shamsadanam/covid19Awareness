@@ -1,0 +1,91 @@
+.hero {
+  margin: 1rem 0;
+  color: $color-white;
+
+  position: relative;
+
+  &__slide {
+    @include bgCover();
+    padding: 10rem 6rem;
+
+    height: 75vh;
+    display: flex;
+    align-items: center;
+
+    // & div {
+    // }
+
+    @include respondMax(575px) {
+      height: 60vh;
+    }
+
+    &--1 {
+      background-image: linear-gradient(
+          90deg,
+          rgba($color-primary, 0.2),
+          rgba($color-primary, 0.2)
+        ),
+        url("../../img/veggie-bg.jpg");
+    }
+    &--2 {
+      background-image: linear-gradient(
+          90deg,
+          rgba($color-primary, 0.2),
+          rgba($color-primary, 0.2)
+        ),
+        url("../../img/grapes.jpg");
+    }
+    &--3 {
+      background-image: linear-gradient(
+          90deg,
+          rgba($color-primary, 0.2),
+          rgba($color-primary, 0.2)
+        ),
+        url("../../img/grain/grain-wheat.jpg");
+    }
+  }
+
+  &__title {
+    font-size: 5rem;
+    // line-height: 6rem;
+  }
+  &__desc {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    & p {
+      max-width: 60ch;
+    }
+  }
+  &__cta {
+    align-self: flex-start;
+    background-color: #fffd98;
+    color: black;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    &:hover {
+      color: black;
+    }
+  }
+  & .slick-prev,
+  & .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    cursor: pointer;
+
+    & i {
+      font-size: 4rem;
+
+      color: $color-grey;
+    }
+  }
+  & .slick-prev {
+    left: 0;
+  }
+  & .slick-next {
+    right: 0;
+  }
+}

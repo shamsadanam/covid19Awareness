@@ -1,0 +1,94 @@
+.blog-header {
+  margin: 2rem 0;
+}
+
+.s-post {
+  //   background-color: $color-grey;
+  &__img {
+    @include bgCover();
+    background-image: url("../../img/blog-1.jpg");
+    background-position: center top;
+    padding: 23rem 0;
+  }
+  &__content {
+    background-color: $color-white;
+    margin-top: -10rem;
+    border-radius: 2rem 2rem 5px 5px;
+    padding: 1.5rem;
+  }
+  &__title {
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 50px;
+    // color: $color-primary-dark;
+  }
+  &__desc {
+    font-size: 1.8rem;
+    line-height: 35px;
+  }
+  &__info {
+    display: flex;
+    // justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #777777;
+  }
+  &__date {
+    & i {
+      font-size: 2rem;
+      color: $color-primary;
+      margin-right: 0.5rem;
+    }
+  }
+  &__author {
+    & i {
+      font-size: 2rem;
+      color: $color-primary;
+      margin-right: 0.5rem;
+    }
+  }
+  &__footer {
+    padding: 1.5rem;
+  }
+  &__tag {
+    & span {
+      margin-right: 1rem;
+    }
+    & a {
+      margin-right: 0.5rem;
+    }
+  }
+  &__link {
+    & a {
+      margin-right: 0.5rem;
+    }
+    & i {
+      font-size: 2rem;
+    }
+  }
+
+  //   ::: sidebar styles :::
+  //   &__sidebar {
+  //   }
+  &__list-title {
+    text-align: right;
+    @include respondMax(767px) {
+      text-align: center;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+    @include respondMax(767px) {
+      flex-direction: row;
+      & a {
+        margin: 0 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,614 @@
+// ::: horizontal big bannger :::
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  box-shadow: 1px 1px 2px rgba($color-black, 0.2);
+
+  // background-color: $color-primary-light-2;
+  background-color: $color-grey;
+
+  &--big {
+    min-height: 15rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 300;
+
+    &--big {
+      @include respondMax(992px) {
+        // font-size: 1.6rem;
+      }
+      @include respondMax(767px) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__cta {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  &__img-container {
+    flex: 0 0 40%;
+  }
+  &__img {
+    @include imgCover();
+  }
+}
+
+// ::: each side banner :::
+.sd-ban {
+  // min-height: 50rem;
+
+  // @include respondMax(991px) {
+  //   display: none;
+  // }
+
+  &:focus {
+    outline: none;
+  }
+
+  &__title {
+    text-align: center;
+    background-color: $color-primary;
+    color: $color-white;
+    margin-bottom: 0;
+    padding: 1.5rem 0;
+    font-size: 2rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+  &__inner {
+    padding: 2rem 0;
+    @include flexCenter();
+    flex-direction: column;
+  }
+  &__name {
+    font-size: 2.2rem;
+    font-weight: 400;
+  }
+  &__tag {
+    font-size: 1.4rem;
+  }
+  &__price {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    & span {
+      font-size: 2.2rem;
+      font-weight: 500;
+    }
+  }
+  & a {
+    color: $color-white;
+  }
+}
+
+// ::: sider banner controls :::
+.side-slider {
+  position: relative;
+  background-color: $color-white;
+
+  & .slick-prev,
+  & .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    cursor: pointer;
+
+    & i {
+      font-size: 2rem;
+      color: $color-black;
+    }
+  }
+  & .slick-prev {
+    left: 0;
+  }
+  & .slick-next {
+    right: 0;
+  }
+}
+
+// .ad-ban{
+
+// }
+
+// ::: single product horizontal cards :::
+.sp-hori {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1rem;
+  overflow: hidden;
+  &--sm {
+    justify-content: flex-start;
+  }
+  @include respondBetween(430px, 575px) {
+    justify-content: space-around;
+    // border: 1px solid red;
+  }
+  &__info {
+    margin: 0 auto;
+
+    @include respondBetween(430px, 575px) {
+      margin: 0 0;
+    }
+  }
+
+  &__name {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  &__tag {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    &:hover {
+      color: $color-primary;
+      cursor: pointer;
+    }
+  }
+  &__price {
+    // margin-top: 1.5rem;
+    // margin-bottom: 2rem;
+    & span {
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+    & del {
+      font-size: 1.4rem;
+    }
+  }
+  &__cta {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    & a {
+      flex: 0 0 50%;
+    }
+
+    i {
+      width: 80%;
+      margin: 0 auto;
+      color: $color-primary;
+      background-color: $color-white;
+      padding: 2px 10px;
+      border-radius: 3px;
+      box-shadow: $shadow-subtle;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.card-img-side {
+  object-fit: cover;
+  height: 14rem;
+  width: 14rem;
+  // @include imgCover();
+  background-color: $color-grey;
+}
+
+.card-img-sm {
+  object-fit: cover;
+  height: 8rem;
+  width: 8rem;
+  background-color: $color-grey;
+  &--white {
+    background-color: $color-white;
+  }
+}
+
+// ::: group sider (big) banner controls :::
+.group-slider {
+  position: relative;
+  background-color: $color-white;
+
+  & .slick-prev,
+  & .slick-next {
+    position: absolute;
+    top: -4rem;
+    // transform: translateY(-50%);
+    z-index: 1;
+
+    cursor: pointer;
+
+    & i {
+      font-size: 2rem;
+      color: $color-black;
+    }
+  }
+  & .slick-prev {
+    right: 2rem;
+  }
+  & .slick-next {
+    right: 0rem;
+  }
+}
+
+// ::: big-banner :::
+
+.bg-ban {
+  // background-color: $color-grey;
+  // max-height: 30rem;
+
+  &__subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    @include respondMax(450px) {
+      font-size: 1.2rem;
+    }
+  }
+  &__title {
+    font-size: 4rem;
+    font-weight: 300;
+    margin: 0 0 1.5rem 0;
+
+    @include respondMax(767px) {
+      font-size: 3.5rem;
+      line-height: 3.5rem;
+    }
+    @include respondMax(575px) {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+    }
+    @include respondMax(450px) {
+      // font-size: 2rem;
+    }
+  }
+  // &__cta {
+  // }
+  &__img-container {
+    width: 45rem;
+
+    @include respondMax(767px) {
+      // height: 100%;
+    }
+  }
+}
+
+// ::: vertical banner slider
+.group-slider-vert {
+  & div:focus,
+  & a:focus {
+    outline: none;
+  }
+  & .slick-prev,
+  & .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    cursor: pointer;
+
+    & i {
+      font-size: 2.5rem;
+      color: $color-black;
+    }
+  }
+  & .slick-prev {
+    left: -3rem;
+  }
+  & .slick-next {
+    right: -3rem;
+  }
+}
+
+// ::: slider in cart page :::
+.cart-slider {
+  @extend .group-slider-vert;
+  & .slick-prev {
+    left: 0rem;
+  }
+  & .slick-next {
+    right: 0rem;
+  }
+}
+
+// ::: vertical banner :::
+.sp-vert {
+  // max-height: 25rem;
+  &.card {
+    border: none;
+  }
+  margin-right: 1.5rem;
+  border-radius: 5px;
+
+  &__info {
+    margin: 0 auto;
+
+    @include respondBetween(430px, 575px) {
+      margin: 0 0;
+    }
+  }
+
+  &__name {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  &__tag {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    &:hover {
+      color: $color-primary;
+      cursor: pointer;
+    }
+  }
+  &__price {
+    // margin-top: 1.5rem;
+    // margin-bottom: 2rem;
+    & span {
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+    & del {
+      font-size: 1.4rem;
+    }
+  }
+  &__cta {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & a {
+      flex: 0 0 50%;
+    }
+    & i {
+      font-size: 2rem;
+
+      color: $color-primary;
+      background-color: $color-white;
+      padding: 2px 10px;
+      border-radius: 3px;
+      box-shadow: $shadow-subtle;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  & small {
+    font-size: 1.2rem;
+  }
+}
+
+/// ::: vertical to horizontal responsive cards
+.sp-vth {
+  &__info {
+    text-align: center;
+  }
+  &__name {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  &__tag {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    &:hover {
+      color: $color-primary;
+      cursor: pointer;
+    }
+  }
+  &__price {
+    // margin-top: 1.5rem;
+    // margin-bottom: 2rem;
+    & span {
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+    & del {
+      font-size: 1.4rem;
+    }
+  }
+  &__cta {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & a {
+      flex: 0 0 50%;
+    }
+    & i {
+      font-size: 2rem;
+
+      color: $color-primary;
+      background-color: $color-white;
+      padding: 2px 10px;
+      border-radius: 3px;
+      box-shadow: $shadow-subtle;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  & small {
+    font-size: 1.2rem;
+  }
+
+  @include respondMax(767px) {
+    flex-direction: row;
+    align-items: center;
+
+    & img {
+      width: 8rem;
+      height: 8rem;
+    }
+    &__info {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__details {
+      display: flex;
+      flex-direction: column;
+    }
+    &__cta {
+      flex-direction: column;
+      align-items: stretch;
+      height: 100%;
+    }
+    &__pna {
+      align-self: center;
+    }
+    &__price {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+  @include respondBetween(550px, 680px) {
+    flex-direction: column;
+    &__info {
+      flex-direction: column;
+      width: 100%;
+    }
+    &__cta {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+}
+.card-img-vert {
+  width: 10rem;
+  height: 10rem;
+  margin: 0 auto;
+  object-fit: contain;
+
+  @include respondMax(575px) {
+    widht: 8rem;
+    height: 8rem;
+  }
+}
+
+.testimonials {
+  & div:focus {
+    outline: none;
+  }
+
+  &__img {
+    width: 100% !important;
+    @include respondMax(768px) {
+      width: 50% !important;
+    }
+  }
+
+  & .slick-prev,
+  & .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    cursor: pointer;
+
+    & i {
+      font-size: 2rem;
+      color: $color-black;
+    }
+  }
+  & .slick-prev {
+    left: 0;
+  }
+  & .slick-next {
+    right: 0;
+  }
+}
+
+// ::: blog-cards :::
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  // min-height: 50rem;
+  background-color: $color-white;
+
+  &__up {
+    height: 17rem;
+  }
+  &__up {
+    @include bgCover();
+    &--1 {
+      background-image: url(../../img/fresh-farm-sm.jpg);
+    }
+    &--2 {
+      background-image: url(../../img/blog-1.jpg);
+      background-position: top;
+    }
+    &--3 {
+      background-image: url(../../img/blog-2.jpg);
+    }
+    &--4 {
+      background-image: url(../../img/blog-3.jpg);
+    }
+  }
+  &__down {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__info {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 20px;
+    color: $color-primary-dark;
+    margin-bottom: 0;
+
+    & a:hover {
+      text-decoration: underline;
+    }
+  }
+  &__date {
+    font-size: 1.4rem;
+    font-style: italic;
+    margin: 0.5rem 0;
+  }
+  &__desc {
+    line-height: 20px;
+  }
+}
+
+.product-variation-slider {
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+// ::: slick slider controls positions :::
+.s-controls-side {
+  & div:focus {
+    outline: none;
+  }
+
+  & .slick-prev,
+  & .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    cursor: pointer;
+
+    & i {
+      font-size: 2rem;
+      color: $color-black;
+    }
+  }
+  & .slick-prev {
+    left: 0;
+  }
+  & .slick-next {
+    right: 0;
+  }
+}
