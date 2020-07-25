@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
 body {
   color: #1b2701;
-  font-family: "Poppins", -apple-system;
+  font-family: "Roboto";
   font-size: 1.6rem;
+  background: #e0e0e0;
+  padding: 1.5rem 0;
+  line-height: 21px;
 }
 
 .text-green {

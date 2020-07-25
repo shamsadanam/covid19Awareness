@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/select2/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-2 offset-2">
+          <form action="">
+            <div class="form-group">
+              <h1>Select2 Styles</h1>
+              <label>Select One</label>
+              <select class="js-select2"> </select>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="assets/select2/dist/js/select2.full.min.js"></script>
+
+    <script>
+      ///filter array from duplicates
+      const countryNames = [];
+      const arrForS2 = [{ id: 0, text: "Worldwide" }];
+
+      function removeDuplicates(array) {
+        let outputArray = [];
+
+        // Count variable is used to add the
+        // new unique value only once in the
+        // outputArray.
+        let count = 0;
+
+        // Start variable is used to set true
+        // if a repeated duplicate value is
+        // encontered in the output array.
+        var start = false;
+        for (j = 0; j < array.length; j++) {
+          for (k = 0; k < outputArray.length; k++) {
+            if (array[j] == outputArray[k]) {
+              start = true;
+            }
+          }
+          count++;
+          if (count == 1 && start == false) {
+            outputArray.push(array[j]);
+          }
+          start = false;
+          count = 0;
+        }
+        return outputArray;
+      }
+
+      function createArrForS2(arr) {
+        let idCount = 1;
+        arr.forEach((item) => {
+          let s2OptionData = {
+            id: idCount++,
+            text: item,
+          };
+          arrForS2.push(s2OptionData);
+        });
+        // document.write("<pre>");
+        // document.write(arrForS2);
+        // document.write("</pre>");
+        // document.write(JSON.stringify(arrForS2));
+        console.log(JSON.stringify(arrForS2));
+      }
+      //get data from csv
+      //   fetch("assets/csv/global-data.csv").then((response) => {
+      //     console.log("got response");
+      //     console.log(response.text());
+      //   });
+
+      async function getCountryNames() {
+        const response = await fetch("assets/csv/global-data.csv");
+        const data = await response.text();
+
+        let idCount = 0;
+
+        const table = data.split("\n").slice(1);
+        table.forEach((row) => {
+          const columns = row.split(",");
+          const country = columns[2];
+
+          countryNames.push(country);
+        });
+      }
+      getCountryNames()
+        .then((response) => {
+          createArrForS2(removeDuplicates(countryNames));
+        })
+        .catch((error) => {
+          console.log("Some Error Happned");
+          console.error(error);
+        });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".js-select2").select2({
+          data: getCountryNames(),
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -6,11 +6,14 @@
     <title>Home | Covid19Awareness</title>
 
     <!-- ::: fonts ::: -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
-    />
-
+    /> -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    /> -->
     <!-- ::: boxicons ::: -->
     <!-- <link rel="stylesheet" href="css/boxicons/boxicons.min.css" /> -->
     <!-- <link
@@ -30,15 +33,15 @@
   </head>
   <body>
     <header>
-      <nav class="header-bottom header-bottom--stat">
+      <nav class="header-bottom header-bottom--index">
         <ul class="header-bottom__menu">
-          <li class="header-bottom__item">
+          <li class="header-bottom__item active">
             <a href="index.html" class="header-bottom__link">
               <i class="bx bxs-home"></i>
               <span>Home</span>
             </a>
           </li>
-          <li class="header-bottom__item active">
+          <li class="header-bottom__item">
             <a href="stats.html" class="header-bottom__link">
               <i class="bx bx-line-chart"></i>
               <span>Stats</span>
@@ -63,66 +66,247 @@
     <!-- <h4 class="headding heading__primary text-center mb-5">
             We are famous for
         </h4> -->
+    <div class="spacer--bottom"></div>
 
-    <!-- ::: footer :::  -->
-    <footer class="footer">
+    <!-- =========== banner top =========== -->
+    <section class="heading-banner">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <div>
-              <div class="header-top__logo">
-                <a href="index.html">
-                  <span class="text-blue"> COVID19 </span><br />
-                  <small>Social Awareness</small>
-                </a>
-              </div>
-              <div class="footer__text my-5">
-                <p class="read-sm t-small t-bold mx-auto mx-lg-0">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Sapiente aliquam explicabo deleniti consequatur ipsum fugit
-                  debitis quidem exercitationem voluptate repellat!
-                </p>
-              </div>
-              <div class="mb-3">
-                Copyright &copy; <span id="year"></span> Shamsad Anam
-              </div>
-            </div>
-            <div class="footer__icon text-green">
-              <a href=""><i class="fab fa-facebook"></i></a>
-              <a href=""><i class="fab fa-instagram"></i></a>
-              <a href=""><i class="fab fa-twitter"></i></a>
-              <a href=""><i class="fab fa-whatsapp"></i></a>
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <div class="heading-banner__text">
+              Flatten the curve by...
             </div>
           </div>
-          <div class="col-lg-8 col-sm-12 mt-5 mt-lg-5">
-            <div class="row">
-              <div class="col-4">
-                <div class="mb-2 footer__title">About</div>
-                <div class="footer__items">
-                  <a href="">History</a>
-                  <a href="">Our Team</a>
-                  <a href="">Brand Guidelines</a>
-                  <a href="">Terms & Conditions</a>
-                  <a href="">Privacy Policy</a>
+        </div>
+      </div>
+    </section>
+    <!-- =========== hero =========== -->
+    <section class="hero-area">
+      <div class="container bg-white py-5">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="img/wash-hands-removebg-preview.png"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                Washing Your Hands
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="img/social-distance-removebg-preview.png"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                Maintaining Social Distance
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="img/wear-mask-removebg-preview.png"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                Covering up your face
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== banner bottom =========== -->
+    <section class="heading-banner">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <div class="heading-banner__text text-right">
+              And say, Not Today COVID-19
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== statistics =========== -->
+    <section class="heading-banner u-mt-2">
+      <div class="container py-5">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md-12">
+            <div class="heading-banner__text--sm mb-3">
+              Global Situation
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex flex-column">
+              <span class="heading-banner__count"> 15,296,926</span>
+              <div class="heading-banner__label">confirmed cases</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex flex-column justify-content-start">
+              <span class="heading-banner__count"> 628,903</span>
+              <div class="heading-banner__label">deaths</div>
+            </div>
+          </div>
+          <div class="col-md-4 mr-auto text-right">
+            <a href="stats.html" class="my-btn-lg">
+              <div class="f-center">
+                <i class="bx bx-line-chart mr-2"></i>
+                <span>See Graph</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ::: blogs-section  ::: -->
+    <section class="blogs-section">
+      <h4 class="headding heading__primary text-center mb-1">
+        Our Blogs
+      </h4>
+      <h4 class="headding heading__tart text-center mb-5">
+        Most Viewed Articles
+      </h4>
+      <div class="case">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <div class="blog-card">
+              <a href="blog.html" class="blog-card__up blog-card__up--1"></a>
+              <div class="blog-card__down">
+                <div class="blog-card__info">
+                  <div class="blog-card__body">
+                    <h1 class="blog-card__title">
+                      <a href="blog.html" class="my-link-black">
+                        News on Vaccine
+                      </a>
+                    </h1>
+                    <div class="blog-card__date">
+                      12 March, 2020
+                    </div>
+                    <div class="blog-card__desc">
+                      Lorem ipsum dicta nostrum saepe qui iustoores perspiciatis
+                      eaque!
+                      <a href="blog.html" class="my-link">Read More</a>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="col-4">
-                <div class="mb-2 footer__title">Services</div>
-                <div class="footer__items">
-                  <a href="">How to Order</a>
-                  <a href="">Our Product</a>
-                  <a href="">Offers</a>
-                  <a href="">Promo</a>
-                  <a href="">Payment Method</a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <div class="blog-card">
+              <div class="blog-card__down">
+                <div class="blog-card__info">
+                  <div class="blog-card__body">
+                    <h1 class="blog-card__title">
+                      <a href="blog.html">
+                        We grow our cattles with Love and Care</a
+                      >
+                    </h1>
+                    <div class="blog-card__date">
+                      19 July, 2019
+                    </div>
+                    <div class="blog-card__desc">
+                      Lorem ipsum dicta nostrum saepe qui iustoores perspiciatis
+                      eaque!
+                      <a href="blog.html" class="my-link">Read More</a>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="col-4">
-                <div class="mb-2 footer__title">Others</div>
-                <div class="footer__items">
-                  <a href="">Contact Us</a>
-                  <a href="">FAQs</a>
+              <a href="blog.html" class="blog-card__up blog-card__up--2"></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-mb-0">
+            <div class="blog-card">
+              <a href="blog.html" class="blog-card__up blog-card__up--3"></a>
+              <div class="blog-card__down">
+                <div class="blog-card__info">
+                  <div class="blog-card__body">
+                    <h1 class="blog-card__title">
+                      <a href="blog.html">
+                        Finnest eco-friendly equipments
+                      </a>
+                    </h1>
+                    <div class="blog-card__date">
+                      10 January, 2018
+                    </div>
+                    <div class="blog-card__desc">
+                      Lorem ipsum dicta nostrum saepe qui iustoores perspiciatis
+                      eaque!
+                      <a href="blog.html" class="my-link">Read More</a>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="blog-card">
+              <div class="blog-card__down">
+                <div class="blog-card__info">
+                  <div class="blog-card__body">
+                    <h1 class="blog-card__title">
+                      <a href="blog.html">
+                        Big space for our animals to roam around
+                      </a>
+                    </h1>
+                    <div class="blog-card__date">
+                      24 August, 2019
+                    </div>
+                    <div class="blog-card__desc">
+                      Lorem ipsum dicta nostrum saepe piciatis eaque!
+                      <a href="blog.html" class="my-link">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="blog.html" class="blog-card__up blog-card__up--4"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="blog.html" class="my-btn-lg mt-4 py-2 text-white">
+          See All
+        </a>
+      </div>
+    </section>
+
+    <!-- =========== Footer =========== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="footer__copyright">
+              All rights reserved &copy; <span id="year"></span> <br />Shamsad
+              Anam
+            </div>
+            <div class="footer__links">
+              <a href="www.facebook.com"
+                ><i class="bx bxl-facebook-square"></i
+              ></a>
+              <a href="www.instagram.com"><i class="bx bxl-instagram"></i></a>
+              <a href="mailto:shamsad.anam@gmail.com"
+                ><i class="bx bx-envelope"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="footer__text text-center">
+              This was a personal project made by Shamsad Anam. All the data are
+              local. Soon there will be API for live data visualization
             </div>
           </div>
         </div>
@@ -137,8 +321,8 @@
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <!-- ::: slick sliders ::: -->
-    <script src="assets/slick/slick/slick.min.js"></script>
-    <script src="js/slick-controls.js"></script>
+    <!-- <script src="assets/slick/slick/slick.min.js"></script>
+    <script src="js/slick-controls.js"></script> -->
 
     <script src="js/main.js"></script>
   </body>

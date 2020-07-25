@@ -32,8 +32,9 @@
 }
 
 .my-link-black {
-  font-size: 1.4rem;
-  color: inherit;
+  font-family: "Roboto";
+  font-size: 2rem;
+  color: $color-black;
   &:hover {
     color: $color-primary;
     text-decoration: underline;
@@ -42,7 +43,7 @@
 
 .name-link-black {
   font-size: 1.8rem;
-  color: red;
+  color: $color-black;
   &:hover {
     color: $color-primary;
     text-decoration: underline;
@@ -108,4 +109,14 @@
 
 .radius-right-50 {
   border-radius: 0 50rem 50rem 0 !important;
+}
+
+.spacer {
+  &--bottom {
+    margin-bottom: 5rem;
+  }
+}
+
+.u-mt-2 {
+  margin-top: 2rem;
 }

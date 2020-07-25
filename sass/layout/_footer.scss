@@ -1,93 +1,34 @@
 .footer {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-size: 1.8rem;
+  & .container {
+    box-shadow: $shadow-subtle;
 
-  @include respondMax(768px) {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    background-color: $color-white;
+    color: $color-black;
+    // box-shadow: $shadow-section;
+    padding: 3rem 5rem;
+
+    @include respondMax(400px) {
+      max-width: 95%;
+    }
   }
-}
-
-@media only screen and (max-width: 991px) {
-  .footer [class*="col-"] {
+  &__text {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    line-height: 25px;
+  }
+  &__copyright {
     text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
   }
-}
-
-.footer__icon {
-  font-size: 40px;
-  margin-right: 20px;
-}
-
-.footer__icon a {
-  color: inherit;
-}
-
-.footer__title {
-  font-size: 20px;
-  font-weight: bold;
-  color: $color-primary-dark;
-}
-
-.footer__items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-@media only screen and (max-width: 991px) {
-  .footer__items {
-    margin-bottom: 30px;
-  }
-}
-
-.footer__items a {
-  color: inherit;
-}
-
-.footer__items a:not(:last-child) {
-  margin-bottom: 5px;
-}
-
-@media screen and (max-width: 767px) {
-  .info__img {
-    display: none;
-    visibility: hidden;
-  }
-  .info-sm__img {
-    color: #fff;
-    font-size: 18px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .info-sm__img--1 {
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8)
-      ),
-      url("../img/explore.jpg");
-  }
-  .info-sm__img--2 {
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8)
-      ),
-      url("../img/create.jpg");
-  }
-  .info-sm__img--3 {
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8)
-      ),
-      url("../img/exp.jpg");
+  &__links {
+    @include flexCenter();
+    & i {
+      margin-right: 1rem;
+      font-size: 2.5rem;
+    }
   }
 }

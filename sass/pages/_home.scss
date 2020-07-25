@@ -1,45 +1,60 @@
-.section-banner {
-  margin: 5rem 0;
-  //   min-height: 20rem;
-}
+.hero-area {
+  margin: 2rem 0;
+  & .container {
+    box-shadow: $shadow-subtle;
+    padding: 0 2rem;
+  }
+  .card {
+    border: none;
+    box-shadow: $shadow-subtle;
 
-.product-highlights {
-  background-color: $color-grey;
-  padding: 3rem 0;
-
-  & .case {
-    max-width: 90%;
+    & .card-img-top {
+      max-height: 20rem;
+      object-fit: cover;
+      object-position: center;
+      background-color: $color-primary-lightest;
+    }
+    & .card-body {
+      font-weight: 500;
+      text-align: center;
+      font-size: 2.5rem;
+      padding: 2rem 0;
+      color: $color-white;
+      background-color: $color-primary;
+      //   color: $color-primary;
+      //   background-color: $color-white;
+    }
   }
 }
 
-.big-banner-section {
-  background-color: $color-grey;
-  margin: 5rem 0;
-}
+.heading-banner {
+  font-family: "Roboto";
+  & .container {
+    box-shadow: $shadow-subtle;
 
-.famous-section {
-  margin: 5rem 0;
-  padding: 5rem 0;
-  // border: 1px solid red;
+    background-color: $color-white;
+    color: $color-black;
+    // box-shadow: $shadow-section;
+    padding: 4rem 5rem;
 
-  // & .case {
-  //   // width: 60%;
-  // }
-}
-
-.testimonials-section {
-  margin: 5rem;
-
-  & .test-comment {
-    max-width: 65ch;
-    font-weight: 600;
-    color: #777777;
-    font-size: 2.5rem;
-    line-height: 32.5px;
+    @include respondMax(400px) {
+      max-width: 95%;
+    }
   }
-}
-
-.blogs-section {
-  padding: 5rem 0 2rem 0;
-  background-color: $color-grey;
+  &__text {
+    font-size: 4rem;
+    font-weight: 300;
+    &--sm {
+      font-size: 2.5rem;
+      font-weight: 400;
+    }
+  }
+  &__count {
+    font-size: 4.5rem;
+    margin: 2rem 0;
+    font-weight: 300;
+  }
+  &__label {
+    font-size: 2rem;
+  }
 }
