@@ -58,3 +58,62 @@
     font-size: 2rem;
   }
 }
+
+// ::: blog-cards :::
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  max-height: 30rem;
+  background-color: $color-white;
+
+  &__up {
+    height: 17rem;
+  }
+  &__up {
+    @include bgCover();
+    &--1 {
+      background-image: url("../img/vaccine-news.jpg");
+    }
+    &--2 {
+      background-image: url("../img/news-2.jpg");
+      background-position: top;
+    }
+    &--3 {
+      background-image: url("../img/news-3.jpg");
+    }
+    &--4 {
+      background-image: url("../img/news-4.jpg");
+    }
+  }
+  &__down {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__info {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 20px;
+    color: $color-primary-dark;
+    margin-bottom: 0;
+
+    & a:hover {
+      text-decoration: underline;
+    }
+  }
+  &__date {
+    font-size: 1.4rem;
+    font-style: italic;
+    margin: 0.5rem 0;
+  }
+  &__desc {
+    line-height: 20px;
+  }
+}
