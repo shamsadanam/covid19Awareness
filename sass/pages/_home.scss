@@ -1,16 +1,23 @@
-.heading-banner {
-  font-family: "Roboto";
-  & .container {
-    background-color: $color-white;
-    color: $color-black;
-    padding: 2rem 5rem;
-    @include respondMax(400px) {
-      max-width: 95%;
-    }
+section .container {
+  background-color: $color-white;
+  color: $color-black;
+  padding: 2rem 5rem;
+  @include respondMax(991px) {
+    max-width: 95%;
   }
+}
+
+.heading-banner,
+.blogs-section {
+  font-family: "Roboto";
+
   &__text {
     font-size: 4rem;
     font-weight: 300;
+    @include respondMax(575px) {
+      font-size: 2.5rem;
+      font-weight: 400;
+    }
 
     &--sm {
       font-size: 2.5rem;
@@ -29,6 +36,14 @@
   & .container {
     padding: 0 2rem;
   }
+  & [class*="col-"] {
+    @include respondMax(575px) {
+      padding-right: 5px;
+      padding-left: 5px;
+      flex-grow: 1;
+      align-items: stretch;
+    }
+  }
 }
 
 //custom lif-card
@@ -38,7 +53,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   border-radius: 1rem;
   background-color: $color-primary-lightest;
   // box-shadow: 2px 2px 5px rgba($color-black, 0.2);
@@ -56,7 +71,15 @@
     font-size: 2rem;
     padding: 2rem 0;
     color: $color-black;
+
+    @include respondMax(575px) {
+      font-size: 1.6rem;
+    }
   }
+}
+
+.blogs-section {
+  margin: 2rem 0;
 }
 
 // ::: blog-cards :::
@@ -64,7 +87,7 @@
   display: flex;
   flex-direction: column;
   max-height: 30rem;
-  background-color: $color-white;
+  background-color: $color-primary-lightest;
 
   &__up {
     height: 17rem;
@@ -76,7 +99,6 @@
     }
     &--2 {
       background-image: url("../img/news-2.jpg");
-      background-position: top;
     }
     &--3 {
       background-image: url("../img/news-3.jpg");
@@ -90,7 +112,7 @@
     flex-direction: column;
     justify-content: center;
   }
-  &__info {
+  &__body {
     padding: 1rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -101,9 +123,11 @@
     font-size: 2rem;
     font-weight: 600;
     line-height: 20px;
-    color: $color-primary-dark;
-    margin-bottom: 0;
 
+    margin-bottom: 0;
+    & a {
+      color: $color-primary-dark;
+    }
     & a:hover {
       text-decoration: underline;
     }
@@ -131,26 +155,32 @@
     font-size: 2rem;
     font-weight: 500;
   }
-  & p {
+  &__body {
     font-size: 4.5rem;
     font-weight: 300;
   }
+
   & box-icon {
-    fill: $color-primary-dark;
-    width: 6rem;
-    height: 6rem;
-    transition: all 0.2s;
+    width: 4rem;
+    height: 4rem;
   }
 
-  // &:hover box-icon {
-  //   // fill: $color-primary;
-  // }
+  &:hover box-icon {
+    fill: $color-primary;
+  }
+
+  &__loader {
+    width: 2rem;
+    height: 2rem;
+    fill: $color-primary-dark;
+    transition: all 0.2s;
+  }
 
   &--blue {
     & h3 {
       background-color: $color-primary-dark;
     }
-    & p {
+    & .count-card__body {
       color: $color-primary-dark;
     }
   }
@@ -158,13 +188,20 @@
     & h3 {
       background-color: $color-secondary;
     }
-    & p {
+    & .count-card__body {
       color: $color-secondary-dark;
     }
   }
   &--icon {
     & h3 {
+      @include flexCenter();
       background-color: $color-primary-dark;
+      & box-icon {
+        fill: $color-white;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 1rem;
+      }
     }
     &:hover {
       cursor: pointer;

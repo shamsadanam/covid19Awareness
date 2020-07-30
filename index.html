@@ -62,7 +62,6 @@
         </ul>
       </nav>
     </header>
-    <div class="spacer--bottom"></div>
 
     <!-- =========== banner top =========== -->
     <section class="heading-banner" id="headingTop">
@@ -80,24 +79,21 @@
     <section class="hero-area">
       <div class="container bg-white py-5">
         <div class="row">
-          <div class="col-md-3 ml-auto">
+          <div class="col-4 col-md-3 ml-auto">
             <div class="lif-card">
-              <!-- <img
-                src="img/svg/029-hand sanitizer.svg"
-                alt=""
-                class="lif-card__img"
-              /> -->
+              <!-- <img src="img/svg/050-mask.svg" alt="" class="lif-card__img" /> -->
               <img
-                src="img/svg/021-washing hands.svg"
+                src="img/svg/050-face mask.svg"
                 alt=""
                 class="lif-card__img"
               />
               <div class="lif-card__body">
-                Wash Your Hands
+                Wear a Mask
               </div>
             </div>
           </div>
-          <div class="col-md-3 my-5 my-md-0">
+
+          <div class="col-4 col-md-3 my-md-0">
             <div class="lif-card">
               <!-- <img
                 src="img/svg/025-keep distance.svg"
@@ -114,16 +110,20 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 mr-auto">
+          <div class="col-4 col-md-3 mr-auto">
             <div class="lif-card">
-              <!-- <img src="img/svg/050-mask.svg" alt="" class="lif-card__img" /> -->
+              <!-- <img
+                src="img/svg/029-hand sanitizer.svg"
+                alt=""
+                class="lif-card__img"
+              /> -->
               <img
-                src="img/svg/050-face mask.svg"
+                src="img/svg/021-washing hands.svg"
                 alt=""
                 class="lif-card__img"
               />
               <div class="lif-card__body">
-                Wear a Mask
+                Wash Your Hands
               </div>
             </div>
           </div>
@@ -148,26 +148,45 @@
     <section class="heading-banner heading-banner--global u-mt-2">
       <div class="container pt-0 pb-5">
         <div class="row">
-          <h2 class="heading-banner__text--sm text-center col-12 my-4">
+          <div class="col-12 headding heading__primary text-center my-2">
             Global Situation
-          </h2>
+          </div>
           <div class="col-md-4 ml-auto">
             <div class="count-card count-card--blue">
               <h3>Confirmed Cases</h3>
-              <p id="caseCount"></p>
+              <div id="caseCount" class="count-card__body">
+                <box-icon
+                  name="loader-alt"
+                  animation="spin"
+                  rotate="270"
+                  class="count-card__loader"
+                ></box-icon>
+              </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="count-card count-card--orange">
               <h3>Deaths</h3>
-              <p id="deathCount"></p>
+              <div id="deathCount" class="count-card__body">
+                <box-icon
+                  name="loader-alt"
+                  animation="spin"
+                  rotate="270"
+                  class="count-card__loader"
+                ></box-icon>
+              </div>
             </div>
           </div>
           <div class="col-md-3 text-center mr-auto">
             <a href="stats.html">
               <div href="stats.html" class="count-card count-card--icon">
-                <h3>See Statistics</h3>
-                <box-icon name="line-chart"></box-icon>
+                <h3>
+                  See Statistics
+                  <box-icon name="link-external"></box-icon>
+                </h3>
+                <div class="count-card__body">
+                  <box-icon name="line-chart"></box-icon>
+                </div>
               </div>
             </a>
           </div>
@@ -177,33 +196,34 @@
 
     <!-- ::: blogs-section  ::: -->
     <section class="blogs-section">
-      <h4 class="headding heading__primary text-center mb-1">
-        Our Blogs
-      </h4>
-      <h4 class="headding heading__tart text-center mb-5">
-        Most Viewed Articles
-      </h4>
-      <div class="case">
+      <div class="container">
+        <h4>
+          <div class="headding heading__primary text-center mb-1">
+            Recent News
+          </div>
+          <div class="headding heading__tart text-center mb-5">
+            Most Viewed Articles
+          </div>
+        </h4>
+
         <div class="row">
           <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
             <div class="blog-card">
               <a href="blog.html" class="blog-card__up blog-card__up--1"></a>
               <div class="blog-card__down">
-                <div class="blog-card__info">
-                  <div class="blog-card__body">
-                    <h1 class="blog-card__title">
-                      <a href="blog.html" class="">
-                        News on Vaccine
-                      </a>
-                    </h1>
-                    <div class="blog-card__date">
-                      12 March, 2020
-                    </div>
-                    <div class="blog-card__desc">
-                      Lorem ipsum dicta nostrum saepe qui iustoores perspiciatis
-                      eaque!
-                      <a href="blog.html" class="my-link">Read More</a>
-                    </div>
+                <div class="blog-card__body">
+                  <h1 class="blog-card__title">
+                    <a href="blog.html" class="">
+                      News on Vaccine
+                    </a>
+                  </h1>
+                  <div class="blog-card__date">
+                    12 March, 2020
+                  </div>
+                  <div class="blog-card__desc">
+                    Lorem ipsum dicta nostrum saepe qui iustoores perspiciatis
+                    eaque!
+                    <a href="blog.html" class="my-link">Read More</a>
                   </div>
                 </div>
               </div>
@@ -211,47 +231,44 @@
           </div>
           <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
             <div class="blog-card">
+              <a href="blog.html" class="blog-card__up blog-card__up--2"></a>
               <div class="blog-card__down">
-                <div class="blog-card__info">
-                  <div class="blog-card__body">
-                    <h1 class="blog-card__title">
-                      <a href="blog.html">
-                        WHO and UNICEF warn of a decline in vaccinations during
-                        COVID-19</a
-                      >
-                    </h1>
-                    <div class="blog-card__date">
-                      19 July, 2019
-                    </div>
-                    <div class="blog-card__desc">
-                      Lorem ipsum dicta nostrum saepe qui iustoores perspiciatis
-                      eaque!
-                      <a href="blog.html" class="my-link">Read More</a>
-                    </div>
+                <div class="blog-card__body">
+                  <h1 class="blog-card__title">
+                    <a href="blog.html">
+                      WHO and UNICEF warn of a decline in vaccinations during
+                      COVID-19</a
+                    >
+                  </h1>
+                  <div class="blog-card__date">
+                    19 July, 2019
+                  </div>
+                  <div class="blog-card__desc">
+                    Lorem ipsum dicta nostrum saepe qui iustoores perspiciatis
+                    eaque!
+                    <a href="blog.html" class="my-link">Read More</a>
                   </div>
                 </div>
               </div>
-              <a href="blog.html" class="blog-card__up blog-card__up--2"></a>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 mb-5 mb-mb-0">
             <div class="blog-card">
               <a href="blog.html" class="blog-card__up blog-card__up--3"></a>
               <div class="blog-card__down">
-                <div class="blog-card__info">
-                  <div class="blog-card__body">
-                    <h1 class="blog-card__title">
-                      <a href="blog.html">
-                        Preventing outbreaks of other diseases
-                      </a>
-                    </h1>
-                    <div class="blog-card__date">
-                      10 January, 2018
-                    </div>
-                    <div class="blog-card__desc">
-                      AI health worker to quit tobacco
-                      <a href="blog.html" class="my-link">Read More</a>
-                    </div>
+                <div class="blog-card__body">
+                  <h1 class="blog-card__title">
+                    <a href="blog.html">
+                      Preventing outbreaks of other diseases
+                    </a>
+                  </h1>
+                  <div class="blog-card__date">
+                    10 January, 2018
+                  </div>
+                  <div class="blog-card__desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quaerat, ea.
+                    <a href="blog.html" class="my-link">Read More</a>
                   </div>
                 </div>
               </div>
@@ -259,33 +276,31 @@
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="blog-card">
+              <a href="blog.html" class="blog-card__up blog-card__up--4"></a>
               <div class="blog-card__down">
-                <div class="blog-card__info">
-                  <div class="blog-card__body">
-                    <h1 class="blog-card__title">
-                      <a href="blog.html">
-                        Big space for our animals to roam around
-                      </a>
-                    </h1>
-                    <div class="blog-card__date">
-                      24 August, 2019
-                    </div>
-                    <div class="blog-card__desc">
-                      Lorem ipsum dicta nostrum saepe piciatis eaque!
-                      <a href="blog.html" class="my-link">Read More</a>
-                    </div>
+                <div class="blog-card__body">
+                  <h1 class="blog-card__title">
+                    <a href="blog.html">
+                      AI health worker to quit tobacco
+                    </a>
+                  </h1>
+                  <div class="blog-card__date">
+                    24 August, 2019
+                  </div>
+                  <div class="blog-card__desc">
+                    Lorem ipsum dicta nostrum saepe piciatis eaque!
+                    <a href="blog.html" class="my-link">Read More</a>
                   </div>
                 </div>
               </div>
-              <a href="blog.html" class="blog-card__up blog-card__up--4"></a>
             </div>
           </div>
         </div>
-      </div>
-      <div class="text-center">
-        <a href="blog.html" class="my-btn-lg mt-4 py-2 text-white">
-          See All
-        </a>
+        <div class="text-center">
+          <a href="blog.html" class="my-btn-lg mt-2 py-2 text-white">
+            See All
+          </a>
+        </div>
       </div>
     </section>
 

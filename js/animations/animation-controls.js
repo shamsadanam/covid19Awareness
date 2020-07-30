@@ -32,12 +32,20 @@
       console.log("This error occured " + err)
     );
 
+    gsap.to(".count-card__loader", {
+      duration: 2,
+      opacity: 0,
+      ease: "power2",
+    });
+
     let counter = {
+      //starting number
       val: data.totalCases - 100,
       val2: data.totalDeaths - 100,
     };
-    gsap.to(counter, 4, {
-      val: data.totalCases,
+    gsap.to(counter, {
+      duration: 4,
+      val: data.totalCases, //end number
       val2: data.totalDeaths,
       snap: "val,val2",
       onUpdate: function () {
@@ -49,34 +57,32 @@
         ).innerHTML = counter.val2.toLocaleString("en-IN");
       },
     });
-    console.log(data.totalCases);
-    console.log(data.totalDeaths);
   })();
 
-  // let tl = gsap.timeline();
+  let tl = gsap.timeline();
 
-  // tl.from("#headingTop p", {
-  //   duration: 1,
-  //   x: 200,
-  //   opacity: 0,
-  //   ease: "power4",
-  // });
+  tl.from("#headingTop p", {
+    duration: 1,
+    x: 300,
+    opacity: 0,
+    ease: "power4",
+  });
 
-  // tl.from(".lif-card", {
-  //   duration: 1,
-  //   // rotationX: -90,
-  //   scale: 0.1,
-  //   opacity: 0,
-  //   // x: 100,
-  //   // y: -50,
-  //   ease: "power4",
-  //   // boxShadow: "5px 50px 50px rgba(0, 0, 0, .1)",
-  //   stagger: 1,
-  // });
-  // tl.from("#headingBottom p", {
-  //   duration: 1,
-  //   x: -50,
-  //   opacity: 0,
-  //   ease: "power4",
-  // });
+  tl.from(".lif-card", {
+    duration: 0.8,
+    // rotationX: -90,
+    scale: 0.1,
+    opacity: 0,
+    // x: 100,
+    // y: -50,
+    ease: "power4",
+    // boxShadow: "5px 50px 50px rgba(0, 0, 0, .1)",
+    stagger: 1,
+  });
+  tl.from("#headingBottom p", {
+    duration: 1,
+    x: -50,
+    opacity: 0,
+    ease: "power4",
+  });
 })();
