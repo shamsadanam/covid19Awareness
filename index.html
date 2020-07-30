@@ -62,20 +62,16 @@
         </ul>
       </nav>
     </header>
-
-    <!-- <h4 class="headding heading__primary text-center mb-5">
-            We are famous for
-        </h4> -->
     <div class="spacer--bottom"></div>
 
     <!-- =========== banner top =========== -->
-    <section class="heading-banner">
+    <section class="heading-banner" id="headingTop">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-12">
-            <div class="heading-banner__text">
-              Flatten the curve by...
-            </div>
+            <p class="heading-banner__text">
+              3 Simple Steps
+            </p>
           </div>
         </div>
       </div>
@@ -84,39 +80,50 @@
     <section class="hero-area">
       <div class="container bg-white py-5">
         <div class="row">
-          <div class="col-md-4">
-            <div class="card">
-              <img
-                src="img/wash-hands-removebg-preview.png"
+          <div class="col-md-3 ml-auto">
+            <div class="lif-card">
+              <!-- <img
+                src="img/svg/029-hand sanitizer.svg"
                 alt=""
-                class="card-img-top"
+                class="lif-card__img"
+              /> -->
+              <img
+                src="img/svg/021-washing hands.svg"
+                alt=""
+                class="lif-card__img"
               />
-              <div class="card-body">
-                Washing Your Hands
+              <div class="lif-card__body">
+                Wash Your Hands
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card">
-              <img
-                src="img/social-distance-removebg-preview.png"
+          <div class="col-md-3 my-5 my-md-0">
+            <div class="lif-card">
+              <!-- <img
+                src="img/svg/025-keep distance.svg"
                 alt=""
-                class="card-img-top"
+                class="lif-card__img"
+              /> -->
+              <img
+                src="img/svg/004-social distancing.svg"
+                alt=""
+                class="lif-card__img"
               />
-              <div class="card-body">
-                Maintaining Social Distance
+              <div class="lif-card__body">
+                Maintain Social Distance
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card">
+          <div class="col-md-3 mr-auto">
+            <div class="lif-card">
+              <!-- <img src="img/svg/050-mask.svg" alt="" class="lif-card__img" /> -->
               <img
-                src="img/wear-mask-removebg-preview.png"
+                src="img/svg/050-face mask.svg"
                 alt=""
-                class="card-img-top"
+                class="lif-card__img"
               />
-              <div class="card-body">
-                Covering up your face
+              <div class="lif-card__body">
+                Wear a Mask
               </div>
             </div>
           </div>
@@ -125,44 +132,42 @@
     </section>
 
     <!-- =========== banner bottom =========== -->
-    <section class="heading-banner">
+    <section class="heading-banner" id="headingBottom">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-12">
-            <div class="heading-banner__text text-right">
+            <p class="heading-banner__text text-right">
               And say, Not Today COVID-19
-            </div>
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========== statistics =========== -->
-    <section class="heading-banner u-mt-2">
-      <div class="container py-5">
-        <div class="row align-items-center justify-content-between">
-          <div class="col-md-12">
-            <div class="heading-banner__text--sm mb-3">
-              Global Situation
+    <section class="heading-banner heading-banner--global u-mt-2">
+      <div class="container pt-0 pb-5">
+        <div class="row">
+          <h2 class="heading-banner__text--sm text-center col-12 my-4">
+            Global Situation
+          </h2>
+          <div class="col-md-4 ml-auto">
+            <div class="count-card count-card--blue">
+              <h3>Confirmed Cases</h3>
+              <p id="caseCount"></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="d-flex flex-column">
-              <span class="heading-banner__count"> 15,296,926</span>
-              <div class="heading-banner__label">confirmed cases</div>
+            <div class="count-card count-card--orange">
+              <h3>Deaths</h3>
+              <p id="deathCount"></p>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="d-flex flex-column justify-content-start">
-              <span class="heading-banner__count"> 628,903</span>
-              <div class="heading-banner__label">deaths</div>
-            </div>
-          </div>
-          <div class="col-md-4 mr-auto text-right">
-            <a href="stats.html" class="my-btn-lg">
-              <div class="f-center">
-                <i class="bx bx-line-chart mr-2"></i>
-                <span>See Graph</span>
+          <div class="col-md-3 text-center mr-auto">
+            <a href="stats.html">
+              <div href="stats.html" class="count-card count-card--icon">
+                <h3>See Statistics</h3>
+                <box-icon name="line-chart"></box-icon>
               </div>
             </a>
           </div>
@@ -290,8 +295,10 @@
         <div class="row align-items-center">
           <div class="col-md-6">
             <div class="footer__copyright">
-              All rights reserved &copy; <span id="year"></span> <br />Shamsad
-              Anam
+              <div>
+                All rights reserved &copy; <span id="year"></span> <br />Shamsad
+                Anam
+              </div>
             </div>
             <div class="footer__links">
               <a href="www.facebook.com"
@@ -307,6 +314,20 @@
             <div class="footer__text text-center">
               This was a personal project made by Shamsad Anam. All the data are
               local. Soon there will be API for live data visualization
+            </div>
+            <div class="text-center t-small">
+              <div>
+                Icons made by
+                <a
+                  href="https://www.flaticon.com/authors/freepik"
+                  title="Freepik"
+                  >Freepik</a
+                >
+                from
+                <a href="https://www.flaticon.com/" title="Flaticon"
+                  >www.flaticon.com</a
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -324,6 +345,8 @@
     <!-- <script src="assets/slick/slick/slick.min.js"></script>
     <script src="js/slick-controls.js"></script> -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+    <script src="js/animations/animation-controls.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

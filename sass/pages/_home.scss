@@ -1,42 +1,9 @@
-.hero-area {
-  margin: 2rem 0;
-  & .container {
-    box-shadow: $shadow-subtle;
-    padding: 0 2rem;
-  }
-  .card {
-    border: none;
-    box-shadow: $shadow-subtle;
-
-    & .card-img-top {
-      max-height: 20rem;
-      object-fit: cover;
-      object-position: center;
-      background-color: $color-primary-lightest;
-    }
-    & .card-body {
-      font-weight: 500;
-      text-align: center;
-      font-size: 2.5rem;
-      padding: 2rem 0;
-      color: $color-white;
-      background-color: $color-primary;
-      //   color: $color-primary;
-      //   background-color: $color-white;
-    }
-  }
-}
-
 .heading-banner {
   font-family: "Roboto";
   & .container {
-    box-shadow: $shadow-subtle;
-
     background-color: $color-white;
     color: $color-black;
-    // box-shadow: $shadow-section;
-    padding: 4rem 5rem;
-
+    padding: 2rem 5rem;
     @include respondMax(400px) {
       max-width: 95%;
     }
@@ -44,18 +11,51 @@
   &__text {
     font-size: 4rem;
     font-weight: 300;
+
     &--sm {
       font-size: 2.5rem;
       font-weight: 400;
     }
   }
-  &__count {
-    font-size: 4.5rem;
-    margin: 2rem 0;
-    font-weight: 300;
+  // &--global {
+  //   & [class*="col-"] {
+  //     border: 1px solid red;
+  //   }
+  // }
+}
+
+.hero-area {
+  margin: 2rem 0;
+  & .container {
+    padding: 0 2rem;
   }
-  &__label {
+}
+
+//custom lif-card
+.lif-card {
+  padding: 2rem 0 1rem 0;
+  min-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1rem;
+  background-color: $color-primary-lightest;
+  // box-shadow: 2px 2px 5px rgba($color-black, 0.2);
+
+  &__img {
+    width: 10rem;
+    border-radius: 50%;
+    margin: 0 auto;
+    // box-shadow: 1px 4px 1px rgba($color-black, 0.2);
+  }
+  &__body {
+    margin-top: 10px;
+    font-weight: 500;
+    text-align: center;
     font-size: 2rem;
+    padding: 2rem 0;
+    color: $color-black;
   }
 }
 
@@ -115,5 +115,60 @@
   }
   &__desc {
     line-height: 20px;
+  }
+}
+
+//::: count cards :::
+.count-card {
+  box-shadow: $shadow-subtle;
+  text-align: center;
+  background-color: $color-primary-lightest;
+
+  & h3 {
+    color: $color-white;
+    padding: 5px 0;
+    margin: 0 0;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  & p {
+    font-size: 4.5rem;
+    font-weight: 300;
+  }
+  & box-icon {
+    fill: $color-primary-dark;
+    width: 6rem;
+    height: 6rem;
+    transition: all 0.2s;
+  }
+
+  // &:hover box-icon {
+  //   // fill: $color-primary;
+  // }
+
+  &--blue {
+    & h3 {
+      background-color: $color-primary-dark;
+    }
+    & p {
+      color: $color-primary-dark;
+    }
+  }
+  &--orange {
+    & h3 {
+      background-color: $color-secondary;
+    }
+    & p {
+      color: $color-secondary-dark;
+    }
+  }
+  &--icon {
+    & h3 {
+      background-color: $color-primary-dark;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: $color-primary-lighter;
+    }
   }
 }
