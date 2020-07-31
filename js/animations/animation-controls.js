@@ -40,11 +40,11 @@
 
     let counter = {
       //starting number
-      val: data.totalCases - 100,
-      val2: data.totalDeaths - 100,
+      val: data.totalCases - 30,
+      val2: data.totalDeaths - 30,
     };
     gsap.to(counter, {
-      duration: 4,
+      duration: 2,
       val: data.totalCases, //end number
       val2: data.totalDeaths,
       snap: "val,val2",

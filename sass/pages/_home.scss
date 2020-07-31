@@ -1,16 +1,22 @@
-section .container {
+section .container,
+.footer .container {
   background-color: $color-white;
   color: $color-black;
   padding: 2rem 5rem;
   @include respondMax(991px) {
     max-width: 95%;
   }
+  @include respondMax(767px) {
+    padding: 1.5rem 3rem;
+  }
 }
 
 .heading-banner,
 .blogs-section {
   font-family: "Roboto";
-
+  & p {
+    margin-bottom: 0;
+  }
   &__text {
     font-size: 4rem;
     font-weight: 300;
@@ -24,15 +30,13 @@ section .container {
       font-weight: 400;
     }
   }
-  // &--global {
-  //   & [class*="col-"] {
-  //     border: 1px solid red;
-  //   }
-  // }
 }
 
 .hero-area {
   margin: 2rem 0;
+  @include respondMax(767px) {
+    margin: 1rem 0;
+  }
   & .container {
     padding: 0 2rem;
   }
@@ -40,7 +44,6 @@ section .container {
     @include respondMax(575px) {
       padding-right: 5px;
       padding-left: 5px;
-      flex-grow: 1;
       align-items: stretch;
     }
   }
@@ -49,27 +52,28 @@ section .container {
 //custom lif-card
 .lif-card {
   padding: 2rem 0 1rem 0;
-  min-height: 20rem;
+  height: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: stretch;
   border-radius: 1rem;
   background-color: $color-primary-lightest;
   // box-shadow: 2px 2px 5px rgba($color-black, 0.2);
 
   &__img {
-    width: 10rem;
-    border-radius: 50%;
+    width: 15rem;
     margin: 0 auto;
-    // box-shadow: 1px 4px 1px rgba($color-black, 0.2);
+    @include respondMax(767px) {
+      width: 10rem;
+    }
   }
   &__body {
-    margin-top: 10px;
+    // margin-top: 10px;
     font-weight: 500;
     text-align: center;
     font-size: 2rem;
-    padding: 2rem 0;
+    margin: 2rem 0;
     color: $color-black;
 
     @include respondMax(575px) {
@@ -86,7 +90,7 @@ section .container {
 .blog-card {
   display: flex;
   flex-direction: column;
-  max-height: 30rem;
+  height: 100%;
   background-color: $color-primary-lightest;
 
   &__up {
@@ -147,6 +151,7 @@ section .container {
   box-shadow: $shadow-subtle;
   text-align: center;
   background-color: $color-primary-lightest;
+  height: 100%;
 
   & h3 {
     color: $color-white;
@@ -190,22 +195,6 @@ section .container {
     }
     & .count-card__body {
       color: $color-secondary-dark;
-    }
-  }
-  &--icon {
-    & h3 {
-      @include flexCenter();
-      background-color: $color-primary-dark;
-      & box-icon {
-        fill: $color-white;
-        width: 1.5rem;
-        height: 1.5rem;
-        margin-left: 1rem;
-      }
-    }
-    &:hover {
-      cursor: pointer;
-      background-color: $color-primary-lighter;
     }
   }
 }

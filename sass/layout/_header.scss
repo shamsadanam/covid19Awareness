@@ -36,7 +36,9 @@ header {
   &__item {
     padding: 1rem 1rem;
     transition: all 0.2s;
-
+    @include respondMax(575px) {
+      padding: 1rem 2rem;
+    }
     &.active {
       background-color: $color-primary-light;
     }

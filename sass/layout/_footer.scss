@@ -9,10 +9,6 @@
     color: $color-black;
     // box-shadow: $shadow-section;
     padding: 3rem 5rem;
-
-    @include respondMax(400px) {
-      max-width: 95%;
-    }
   }
   &__text {
     font-size: 1.6rem;
