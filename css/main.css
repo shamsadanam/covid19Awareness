@@ -770,9 +770,6 @@ section .container,
   .hero-area [class*="col-"] {
     padding-right: 5px;
     padding-left: 5px;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
   }
 }
 
@@ -1186,6 +1183,103 @@ section .container,
 
 .sp-hori__cta i:hover {
   cursor: pointer;
+}
+
+.all-blogs-section {
+  margin: 2rem 0;
+  padding: 3rem 0;
+}
+
+.all-blogs-section .row-inner {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.all-blogs-section .row-inner [class*="col-"] {
+  margin-bottom: 2rem;
+}
+
+.pre-post {
+  border-radius: 3px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.pre-post__img {
+  width: 100%;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  cursor: pointer;
+  -webkit-filter: contrast(0.95);
+          filter: contrast(0.95);
+}
+
+.pre-post:hover .pre-post__img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-filter: contrast(1);
+          filter: contrast(1);
+}
+
+.pre-post__body {
+  padding: 0.5rem 1rem;
+  background-color: #caf0f8;
+  color: #000;
+  position: relative;
+  z-index: 9;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 10rem;
+}
+
+.pre-post__title {
+  font-size: 1.6rem;
+  line-height: 20px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.pre-post__author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.4rem;
+}
+
+.pre-post__author a {
+  margin-right: 1rem;
+}
+
+.pre-post__author i {
+  color: #03045e;
 }
 
 h1 {
