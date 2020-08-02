@@ -193,7 +193,12 @@ section .container,
       background-color: $color-secondary;
     }
     & .count-card__body {
-      color: $color-secondary-dark;
+      color: $color-primary-dark;
+    }
+  }
+  &--green {
+    & h3 {
+      background-color: $color-primary;
     }
   }
 }

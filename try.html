@@ -27,37 +27,37 @@
     <script src="assets/select2/dist/js/select2.full.min.js"></script>
 
     <script>
-      ///filter array from duplicates
-      const countryNames = [];
-      const arrForS2 = [{ id: 0, text: "Worldwide" }];
+      // ///filter array from duplicates
+      // const countryNames = [];
+      // const arrForS2 = [{ id: 0, text: "Worldwide" }];
 
-      function removeDuplicates(array) {
-        let outputArray = [];
+      // function removeDuplicates(array) {
+      //   let outputArray = [];
 
-        // Count variable is used to add the
-        // new unique value only once in the
-        // outputArray.
-        let count = 0;
+      //   // Count variable is used to add the
+      //   // new unique value only once in the  outputArray.
 
-        // Start variable is used to set true
-        // if a repeated duplicate value is
-        // encontered in the output array.
-        var start = false;
-        for (j = 0; j < array.length; j++) {
-          for (k = 0; k < outputArray.length; k++) {
-            if (array[j] == outputArray[k]) {
-              start = true;
-            }
-          }
-          count++;
-          if (count == 1 && start == false) {
-            outputArray.push(array[j]);
-          }
-          start = false;
-          count = 0;
-        }
-        return outputArray;
-      }
+      //   let count = 0;
+
+      //   // Start variable is used to set true
+      //   // if a repeated duplicate value is
+      //   // encontered in the output array.
+      //   var start = false;
+      //   for (j = 0; j < array.length; j++) {
+      //     for (k = 0; k < outputArray.length; k++) {
+      //       if (array[j] == outputArray[k]) {
+      //         start = true;
+      //       }
+      //     }
+      //     count++;
+      //     if (count == 1 && start == false) {
+      //       outputArray.push(array[j]);
+      //     }
+      //     start = false;
+      //     count = 0;
+      //   }
+      //   return outputArray;
+      // }
 
       function createArrForS2(arr) {
         let idCount = 1;
@@ -81,34 +81,39 @@
       //   });
 
       async function getCountryNames() {
-        const response = await fetch("assets/csv/global-data.csv");
-        const data = await response.text();
+        let select2data = [];
+        let id = 0;
+        let requestOptions = {
+          method: "GET",
+          redirect: "follow",
+        };
 
-        let idCount = 0;
-
-        const table = data.split("\n").slice(1);
-        table.forEach((row) => {
-          const columns = row.split(",");
-          const country = columns[2];
-
-          countryNames.push(country);
+        const response = await fetch(
+          "https://covid19-api.org/api/countries",
+          requestOptions
+        );
+        const data = await response.json();
+        data.forEach((datum) => {
+          select2data.push({
+            id: id++,
+            text: datum.name,
+          });
         });
+        return select2data;
       }
       getCountryNames()
         .then((response) => {
-          createArrForS2(removeDuplicates(countryNames));
+          $(".js-select2").select2({
+            data: response,
+          });
+          console.log(response);
         })
         .catch((error) => {
           console.log("Some Error Happned");
           console.error(error);
         });
-    </script>
-    <script>
-      $(document).ready(function () {
-        $(".js-select2").select2({
-          data: getCountryNames(),
-        });
-      });
+
+      $(document).ready(function () {});
     </script>
   </body>
 </html>

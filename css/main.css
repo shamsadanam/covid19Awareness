@@ -969,7 +969,11 @@ section .container,
 }
 
 .count-card--orange .count-card__body {
-  color: #c9500a;
+  color: #03045e;
+}
+
+.count-card--green h3 {
+  background-color: #0077b6;
 }
 
 .blog-header {

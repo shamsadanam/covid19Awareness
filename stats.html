@@ -74,9 +74,7 @@
               <div class="form-group">
                 <label for="">Select Data</label>
                 <select name="dataList" id="dataType" class="js-dataType">
-                  <option value="newCases">New Cases</option>
                   <option value="cumulativeCases">Cumulative Cases</option>
-                  <option value="newDeaths">New Deaths</option>
                   <option value="cumulativeDeaths">Cumulative Deaths</option>
                 </select>
               </div>
@@ -92,6 +90,73 @@
             </div>
           </div>
         </form>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="count-card count-card--blue">
+              <h3>Confirmed Cases</h3>
+              <div id="cumulativeCases" class="count-card__body">
+                <box-icon
+                  name="loader-alt"
+                  animation="spin"
+                  rotate="270"
+                  class="count-card__loader"
+                ></box-icon>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="count-card count-card--orange">
+              <h3>Confirmed Deaths</h3>
+              <div id="cumulativeDeaths" class="count-card__body">
+                <box-icon
+                  name="loader-alt"
+                  animation="spin"
+                  rotate="270"
+                  class="count-card__loader"
+                ></box-icon>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-3">
+            <div class="count-card count-card--green">
+              <h3>Recovered</h3>
+              <div id="cumulativeRecovered" class="count-card__body">
+                <box-icon
+                  name="loader-alt"
+                  animation="spin"
+                  rotate="270"
+                  class="count-card__loader"
+                ></box-icon>
+              </div>
+            </div>
+          </div> -->
+          <div class="col-md-3">
+            <div class="count-card count-card--blue">
+              <h3>New Cases</h3>
+              <div id="newCases" class="count-card__body">
+                <box-icon
+                  name="loader-alt"
+                  animation="spin"
+                  rotate="270"
+                  class="count-card__loader"
+                ></box-icon>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="count-card count-card--orange">
+              <h3>New Deaths</h3>
+              <div id="newDeaths" class="count-card__body">
+                <box-icon
+                  name="loader-alt"
+                  animation="spin"
+                  rotate="270"
+                  class="count-card__loader"
+                ></box-icon>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section class="graph-section">
