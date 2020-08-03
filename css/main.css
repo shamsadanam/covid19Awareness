@@ -707,7 +707,9 @@ header {
   font-size: 2.5rem;
 }
 
-section .container,
+.heading-banner .container,
+.hero-area .container,
+.blogs-section .container,
 .footer .container {
   background-color: #fff;
   color: #000;
@@ -715,14 +717,18 @@ section .container,
 }
 
 @media only screen and (max-width: 991px) {
-  section .container,
+  .heading-banner .container,
+  .hero-area .container,
+  .blogs-section .container,
   .footer .container {
     max-width: 95%;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  section .container,
+  .heading-banner .container,
+  .hero-area .container,
+  .blogs-section .container,
   .footer .container {
     padding: 1.5rem 3rem;
   }
@@ -965,7 +971,7 @@ section .container,
 }
 
 .count-card--orange h3 {
-  background-color: #f68544;
+  background-color: #e76f51;
 }
 
 .count-card--orange .count-card__body {

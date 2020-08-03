@@ -1,13 +1,17 @@
-section .container,
-.footer .container {
-  background-color: $color-white;
-  color: $color-black;
-  padding: 2rem 5rem;
-  @include respondMax(991px) {
-    max-width: 95%;
-  }
-  @include respondMax(767px) {
-    padding: 1.5rem 3rem;
+.heading-banner,
+.hero-area,
+.blogs-section,
+.footer {
+  & .container {
+    background-color: $color-white;
+    color: $color-black;
+    padding: 2rem 5rem;
+    @include respondMax(991px) {
+      max-width: 95%;
+    }
+    @include respondMax(767px) {
+      padding: 1.5rem 3rem;
+    }
   }
 }
 

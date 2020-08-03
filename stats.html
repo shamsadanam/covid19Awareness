@@ -90,80 +90,82 @@
             </div>
           </div>
         </form>
-        <div class="row">
-          <div class="col-md-3">
-            <div class="count-card count-card--blue">
-              <h3>Confirmed Cases</h3>
-              <div id="cumulativeCases" class="count-card__body">
-                <box-icon
-                  name="loader-alt"
-                  animation="spin"
-                  rotate="270"
-                  class="count-card__loader"
-                ></box-icon>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="count-card count-card--orange">
-              <h3>Confirmed Deaths</h3>
-              <div id="cumulativeDeaths" class="count-card__body">
-                <box-icon
-                  name="loader-alt"
-                  animation="spin"
-                  rotate="270"
-                  class="count-card__loader"
-                ></box-icon>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="col-md-3">
-            <div class="count-card count-card--green">
-              <h3>Recovered</h3>
-              <div id="cumulativeRecovered" class="count-card__body">
-                <box-icon
-                  name="loader-alt"
-                  animation="spin"
-                  rotate="270"
-                  class="count-card__loader"
-                ></box-icon>
-              </div>
-            </div>
-          </div> -->
-          <div class="col-md-3">
-            <div class="count-card count-card--blue">
-              <h3>New Cases</h3>
-              <div id="newCases" class="count-card__body">
-                <box-icon
-                  name="loader-alt"
-                  animation="spin"
-                  rotate="270"
-                  class="count-card__loader"
-                ></box-icon>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="count-card count-card--orange">
-              <h3>New Deaths</h3>
-              <div id="newDeaths" class="count-card__body">
-                <box-icon
-                  name="loader-alt"
-                  animation="spin"
-                  rotate="270"
-                  class="count-card__loader"
-                ></box-icon>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
     <section class="graph-section">
-      <div class="graph">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-12">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-3">
+            <div class="row flex-column">
+              <div class="col-md-12">
+                <div class="count-card count-card--blue">
+                  <h3>Confirmed Cases</h3>
+                  <div id="cumulativeCases" class="count-card__body">
+                    <box-icon
+                      name="loader-alt"
+                      animation="spin"
+                      rotate="270"
+                      class="count-card__loader"
+                    ></box-icon>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="count-card count-card--orange">
+                  <h3>Confirmed Deaths</h3>
+                  <div id="cumulativeDeaths" class="count-card__body">
+                    <box-icon
+                      name="loader-alt"
+                      animation="spin"
+                      rotate="270"
+                      class="count-card__loader"
+                    ></box-icon>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="count-card count-card--green">
+                  <h3>Recovered</h3>
+                  <div id="cumulativeRecovered" class="count-card__body">
+                    <box-icon
+                      name="loader-alt"
+                      animation="spin"
+                      rotate="270"
+                      class="count-card__loader"
+                    ></box-icon>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="count-card count-card--blue">
+                  <h3>New Cases</h3>
+                  <div id="newCases" class="count-card__body">
+                    <box-icon
+                      name="loader-alt"
+                      animation="spin"
+                      rotate="270"
+                      class="count-card__loader"
+                    ></box-icon>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="count-card count-card--orange">
+                  <h3>New Deaths</h3>
+                  <div id="newDeaths" class="count-card__body">
+                    <box-icon
+                      name="loader-alt"
+                      animation="spin"
+                      rotate="270"
+                      class="count-card__loader"
+                    ></box-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="graph">
               <div class="graph__area">
                 <canvas id="chart" width="200" height="80"></canvas>
               </div>
