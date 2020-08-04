@@ -205,4 +205,24 @@
       background-color: $color-primary;
     }
   }
+  &--sm {
+    & h3 {
+      font-size: 1.4rem;
+    }
+    & .count-card__body {
+      font-size: 2.5rem;
+      font-weight: 400;
+    }
+    @include respondBetween(0, 575px) {
+      & h3 {
+        font-size: 1.4rem !important;
+        padding: 5px 0 !important;
+      }
+      & .count-card__body {
+        font-size: 2rem !important;
+        line-height: 0px;
+        padding: 2rem 0;
+      }
+    }
+  }
 }

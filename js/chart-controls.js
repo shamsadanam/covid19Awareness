@@ -46,6 +46,8 @@ function initSelect2() {
 
   $(".js-graphType").select2();
   $(".js-dataType").select2();
+  $(".js-graphType-sm").select2();
+  $(".js-dataType-sm").select2();
 
   // chart menu controls - events when an option is selected
   //first list of country selection
@@ -57,36 +59,6 @@ function initSelect2() {
         chart.data.datasets[0].label = `${currentSelectedDataType} (${currentSelectedCountry})`;
         chart.update();
         getDiffData(currentSelectedCountry);
-      }
-    );
-  });
-
-  //adding compared country data
-  $(".js-select2-2").on("select2:select", function (e) {
-    currentSelectedCompare = e.params.data.text.trim();
-    // chart.destroy();
-    getData(currentSelectedCompare, currentSelectedDataType).then(
-      (response) => {
-        // drawChart(currentSelectedGraphType, response);
-        const compareData = {
-          label: "No. of " + currentSelectedDataType,
-          data: response.ys,
-          backgroundColor: "#dc3545",
-          borderColor: "#dc3545",
-          hoverBackgroundColor: "#0077b6",
-          fill: false,
-        };
-        if (chart.data.datasets[1]) {
-          chart.data.datasets.pop();
-        }
-        chart.data.datasets.push(compareData);
-
-        chart.update();
-        // debug logs
-        // console.log(compareData);
-        // console.log(currentSelectedCountry);
-        // console.log(currentSelectedDataType);
-        // console.log(currentSelectedGraphType);
       }
     );
   });
@@ -113,6 +85,33 @@ function initSelect2() {
           ? "#ee6c4d"
           : "#00b4d8";
         chart.data.datasets[0].label = `${currentSelectedDataType} (${currentSelectedCountry})`;
+        chart.reset();
+        chart.update();
+      }
+    );
+  });
+  $(".js-dataType-sm").on("select2:select", function (e) {
+    currentSelectedDataType = e.params.data.text.trim();
+    getData(currentSelectedCountry, currentSelectedDataType).then(
+      (response) => {
+        chart.data.datasets[0].data = response.ys.slice(-60);
+        chart.data.datasets[0].backgroundColor = currentSelectedDataType.includes(
+          "Death"
+        )
+          ? "#ee6c4d"
+          : "#00b4d8";
+        chart.data.datasets[0].hoverBackgroundColor = currentSelectedDataType.includes(
+          "Death"
+        )
+          ? "#da5204"
+          : "#0077b6";
+        chart.data.datasets[0].borderColor = currentSelectedDataType.includes(
+          "Death"
+        )
+          ? "#ee6c4d"
+          : "#00b4d8";
+        chart.data.datasets[0].label = `${currentSelectedDataType} (${currentSelectedCountry})`;
+        chart.reset();
         chart.update();
       }
     );
@@ -121,39 +120,27 @@ function initSelect2() {
   //graph type selection
   //need to destroy old graph and draw a new one to change the type
   $(".js-graphType").on("select2:select", function (e) {
-    currentSelectedGraphType = e.params.data.text.trim();
+    currentSelectedGraphType = e.params.data.text.trim().toLowerCase();
+    let currentGraph = {};
+    currentGraph = Object.assign(currentGraph, chart.data);
     chart.destroy();
-    getData(currentSelectedCountry, currentSelectedDataType).then(
-      (response) => {
-        drawChart(currentSelectedGraphType.toLowerCase(), response);
-        // chart.type = currentSelectedGraphType.trim().toLowerCase();
-        // chart.update();
-        // debug logs
-        // console.log(currentSelectedCountry);
-        // console.log(currentSelectedDataType);
-        // console.log(chart.type);
-      }
-    );
-    //drawing the compare data
-    getData(currentSelectedCompare, currentSelectedDataType).then(
-      (response) => {
-        // drawChart(currentSelectedGraphType, response);
-        const compareData = {
-          label: "No. of " + currentSelectedDataType,
-          data: response.ys,
-          backgroundColor: "#dc3545",
-          borderColor: "#dc3545",
-          hoverBackgroundColor: "#0077b6",
-          fill: false,
-        };
-        if (chart.data.datasets[1]) {
-          chart.data.datasets.pop();
-        }
-        chart.data.datasets.push(compareData);
-
-        chart.update();
-      }
-    );
+    let ctx = document.querySelector("#chart");
+    chart = new Chart(ctx, {
+      type: currentSelectedGraphType,
+      data: currentGraph,
+    });
+  });
+  $(".js-graphType-sm").on("select2:select", function (e) {
+    currentSelectedGraphType = e.params.data.text.trim().toLowerCase();
+    console.log(e.params.data.text.trim().toLowerCase());
+    let currentGraph = {};
+    currentGraph = Object.assign(currentGraph, chart.data);
+    chart.destroy();
+    let ctx = document.querySelector("#chart");
+    chart = new Chart(ctx, {
+      type: currentSelectedGraphType,
+      data: currentGraph,
+    });
   });
 }
 
@@ -199,13 +186,13 @@ async function getData(getCountry = "BD", dataType = "Cumulative Cases") {
   const response = await fetch(url);
   const data = await response.json();
 
-  if (dataType === "Cumulative Cases") {
+  if (dataType.includes("Cases")) {
     data.forEach((datum) => {
       //putting the data in arrays to plot it in the graph
       xs.unshift(datum.last_update.split("T")[0]);
       ys.unshift(datum.cases);
     });
-  } else if (dataType === "Cumulative Deaths") {
+  } else if (dataType.includes("Deaths")) {
     data.forEach((datum) => {
       //putting the data in arrays to plot it in the graph
       xs.unshift(datum.last_update.split("T")[0]);
@@ -224,6 +211,10 @@ async function getData(getCountry = "BD", dataType = "Cumulative Cases") {
   document.querySelector(
     "#cumulativeRecovered"
   ).innerHTML = data[0].recovered.toLocaleString("en-IN");
+  document.querySelector("#lastUpdate").innerHTML = data[0].last_update.split(
+    "T"
+  )[0];
+
   return { xs, ys };
 }
 
@@ -264,7 +255,6 @@ async function drawChart(graphType = "bar", plotData) {
           borderColor: "#00b4d8",
           hoverBackgroundColor: "#0077b6",
           fill: false,
-          pointRadius: 0,
         },
       ],
     },

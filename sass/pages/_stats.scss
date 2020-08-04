@@ -1,0 +1,150 @@
+.controls-section {
+  & .container-fluid {
+    background-color: $color-white;
+    color: $color-black;
+    padding: 1rem 0;
+    @include respondMax(991px) {
+      max-width: 95%;
+    }
+    @include respondMax(767px) {
+      padding: 1.5rem 3rem;
+    }
+  }
+}
+
+.controls-section {
+  & .container {
+    background-color: $color-white;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+
+    & .row {
+      padding: 1.5rem 0;
+      & [class*="col-"] {
+        padding-right: 1rem;
+        padding-left: 1rem;
+
+        @include respondMax(767px) {
+          & h4 {
+            font-size: 1.3rem;
+          }
+          & div {
+            font-size: 1.2rem !important;
+          }
+        }
+      }
+      @include respondMax(575px) {
+        padding: 0 0;
+      }
+    }
+    @include respondMax(991px) {
+      max-width: 100%;
+    }
+    @include respondMax(767px) {
+      padding: 1.5rem 3rem;
+    }
+  }
+}
+
+.graph-section {
+  padding: 1rem 0;
+  background-color: $color-white;
+  & .col-md-2 {
+    padding-top: 1rem;
+    & .y1 {
+      margin-bottom: 1rem;
+      @include respondMax(767px) {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+    }
+    & .y2 {
+      margin-bottom: 1rem;
+      @include respondMax(767px) {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+
+.graph {
+  background-color: $color-white;
+  height: 100%;
+}
+
+.bg-primary-light {
+  background-color: $color-primary-lightest;
+}
+
+.data-type,
+.graph-type {
+  @include respondMax(575px) {
+    display: none;
+  }
+}
+
+#menu-button {
+  display: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: $color-primary-lighter;
+  box-shadow: 3px 3px 5px rgba($color-black, 0.2);
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+  & box-icon {
+    width: 2rem;
+    height: 2rem;
+    @include absCenter();
+  }
+
+  @include respondMax(575px) {
+    display: block;
+  }
+}
+#side-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: -20rem;
+  padding-top: 5rem;
+  z-index: 9;
+  background-color: $color-white;
+  width: 15rem;
+  height: 100vh;
+  box-shadow: -5px 0 5px rgba($color-black, 0.2);
+  transition: all 0.2s;
+
+  & > div {
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 0 1rem;
+
+    & h4 {
+      font-size: 1.3rem;
+    }
+  }
+
+  @include respondMax(575px) {
+    display: block;
+  }
+}
+
+.js-marginRight {
+  margin-right: 0px !important;
+}
+
+.select2-selection__rendered {
+  font-size: 1.2rem !important;
+}
+.select2-results__option {
+  font-size: 1.2rem !important;
+}

@@ -7,6 +7,9 @@ body {
   background: #e0e0e0;
   padding: 1.5rem 0;
   // line-height: 21px;
+  @include respondMax(575px) {
+    padding: 0 0;
+  }
 }
 
 .text-green {
