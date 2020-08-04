@@ -143,8 +143,12 @@
 }
 
 .select2-selection__rendered {
-  font-size: 1.2rem !important;
+  @include respondMax(767px) {
+    font-size: 1.2rem !important;
+  }
 }
 .select2-results__option {
-  font-size: 1.2rem !important;
+  @include respondMax(767px) {
+    font-size: 1.2rem !important;
+  }
 }
