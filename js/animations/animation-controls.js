@@ -49,12 +49,10 @@
       val2: data.totalDeaths,
       snap: "val,val2",
       onUpdate: function () {
-        document.querySelector(
-          "#caseCount"
-        ).innerHTML = counter.val.toLocaleString("en-IN");
-        document.querySelector(
-          "#deathCount"
-        ).innerHTML = counter.val2.toLocaleString("en-IN");
+        document.querySelector("#caseCount").innerHTML =
+          counter.val.toLocaleString("en-IN");
+        document.querySelector("#deathCount").innerHTML =
+          counter.val2.toLocaleString("en-IN");
       },
     });
   })();
